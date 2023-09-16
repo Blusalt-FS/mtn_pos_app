@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/toolbar_color"
+                app:buttonGravity="center_vertical"
+                app:navigationIcon="@drawable/ic_arrow_square_left">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Select Device"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/listen_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Listening to a Device"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/listeningImage"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:src="@drawable/ic_listening"
+            app:layout_constraintEnd_toEndOf="@+id/listen_text"
+            app:layout_constraintStart_toStartOf="@+id/listen_text"
+            app:layout_constraintTop_toBottomOf="@+id/listen_text" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/connected_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="310dp"
+            android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/ic_bluetooth_small"
+            android:text="Make sure your POS bluetooth is turned on"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/listeningImage"
+            app:layout_constraintStart_toStartOf="@+id/listeningImage"
+            app:layout_constraintTop_toTopOf="@+id/listeningImage" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/connected_text1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/ic_warning_small"
+            android:text="Bluetooth devices need to be close to ensure a secure and stable connection"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/listeningImage"
+            app:layout_constraintStart_toStartOf="@+id/listeningImage"
+            app:layout_constraintTop_toBottomOf="@+id/connected_text" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/start_listening"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/background_btn"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:text="Start Listening"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/validateImage"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:src="@drawable/ic_validate"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/listen_text"
+            app:layout_constraintStart_toStartOf="@+id/listen_text"
+            app:layout_constraintTop_toBottomOf="@+id/listen_text" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/validate_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Validate Transaction"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/validateImage"
+            app:layout_constraintStart_toStartOf="@+id/validateImage"
+            app:layout_constraintTop_toBottomOf="@+id/validateImage" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/about_to_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="You are about to pay"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/validateImage"
+            app:layout_constraintStart_toStartOf="@+id/validateImage"
+            app:layout_constraintTop_toBottomOf="@+id/validate_text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/continue_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/background_btn"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/amount_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="₦ 40,000"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/validateImage"
+            app:layout_constraintStart_toStartOf="@+id/validateImage"
+            app:layout_constraintTop_toBottomOf="@+id/about_to_text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/valitate_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/background_btn"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:text="Validate"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

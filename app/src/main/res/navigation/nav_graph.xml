@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/connectionFragment">
+
+    <fragment
+        android:id="@+id/connectionFragment"
+        android:name="com.blusalt.plugingapp.ConnectionFragment"
+        tools:layout="@layout/fragment_connection">
+
+        <action
+            android:id="@+id/action_connectionFragment_to_statusFragment"
+            app:destination="@id/statusFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/connectionFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/statusFragment"
+        android:name="com.blusalt.plugingapp.TransactionStatusFragment"
+        tools:layout="@layout/fragment_trans_status">
+
+        <argument
+            android:name="result"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_statusFragment_to_connectionFragment"
+            app:destination="@id/connectionFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/statusFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <!--    <fragment-->
+    <!--        android:id="@+id/connectedFragment"-->
+    <!--        android:name="com.blusalt.mposplugin.Fragment.ConnectedFragment"-->
+    <!--        tools:layout="@layout/fragment_connection">-->
+    <!--    </fragment>-->
+
+</navigation>
